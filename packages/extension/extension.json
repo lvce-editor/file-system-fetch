@@ -1,0 +1,10 @@
+{
+  "browser": "main.js",
+  "name": "File System Fetch",
+  "activation": ["onFileSystem:xyz"],
+  "fileSystems": [
+    {
+      "scheme": "xyz"
+    }
+  ]
+}

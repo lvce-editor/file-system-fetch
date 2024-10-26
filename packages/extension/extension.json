@@ -2,10 +2,10 @@
   "browser": "main.js",
   "id": "builtin.file-system-fetch",
   "name": "File System Fetch",
-  "activation": ["onFileSystem:xyz"],
+  "activation": ["onFileSystem:fetch"],
   "fileSystems": [
     {
-      "scheme": "xyz"
+      "scheme": "fetch"
     }
   ]
 }

@@ -1,7 +1,7 @@
-import * as AssetDir from '../AssetDir/AssetDir.js'
+import * as AssetDir from '../AssetDir/AssetDir.ts'
 import type { Dirent } from '../Dirent/Dirent.ts'
-import * as DirentType from '../DirentType/DirentType.js'
-import * as GetJson from '../GetJson/GetJson.js'
+import * as DirentType from '../DirentType/DirentType.ts'
+import * as GetJson from '../GetJson/GetJson.ts'
 
 // TODO move all of this to an extension
 

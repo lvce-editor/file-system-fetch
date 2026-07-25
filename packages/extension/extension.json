@@ -1,8 +1,14 @@
 {
-  "browser": "main.js",
+  "browser": "src/fileSystemFetchMain.ts",
   "id": "builtin.file-system-fetch",
   "name": "File System Fetch",
+  "isolated": true,
   "activation": ["onFileSystem:fetch"],
+  "fileSystemProviders": [
+    {
+      "id": "fetch"
+    }
+  ],
   "fileSystems": [
     {
       "scheme": "fetch"

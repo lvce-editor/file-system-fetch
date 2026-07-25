@@ -17,7 +17,7 @@ const { commitHash } = await exportStatic({
   root,
 })
 
-await cp(path.join(root, 'dist2'), path.join(root, 'dist', commitHash, 'extensions', 'builtin.csv-viewer'), {
+await cp(path.join(root, 'dist2'), path.join(root, 'dist', commitHash, 'extensions', 'builtin.file-system-fetch'), {
   recursive: true,
   force: true,
 })

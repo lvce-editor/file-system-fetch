@@ -14,6 +14,7 @@ delete packageJson.xo
 delete packageJson.jest
 delete packageJson.prettier
 delete packageJson.devDependencies
+packageJson.main = 'dist/fileSystemFetchMain.js'
 
 fs.writeFileSync(join(root, 'dist', 'package.json'), JSON.stringify(packageJson, null, 2) + '\n')
 fs.copyFileSync(join(root, 'README.md'), join(root, 'dist', 'README.md'))
@@ -29,7 +30,7 @@ await replace({
   replacement: 'dist/fileSystemFetchMain.js',
 })
 
-await bundleJs(join(root, 'dist', 'src', 'fileSystemFetchMain.ts'), join(root, 'dist', 'dist', 'fileSystemFetchMain.js'))
+await bundleJs(join(extension, 'src', 'fileSystemFetchMain.ts'), join(root, 'dist', 'dist', 'fileSystemFetchMain.js'))
 
 await packageExtension({
   highestCompression: true,

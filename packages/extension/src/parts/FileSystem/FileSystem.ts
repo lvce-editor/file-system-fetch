@@ -13,8 +13,13 @@ export const state = {
   files: Object.create(null),
 }
 
+const getPath = (uri: string): string => {
+  return new URL(uri).pathname
+}
+
 export const readFile = async (uri) => {
-  const fetchUri = `${AssetDir.assetDir}${uri}`
+  const path = getPath(uri)
+  const fetchUri = `${AssetDir.assetDir}${path}`
   const text = await GetJson.getJson(fetchUri)
   return text
 }
@@ -27,21 +32,18 @@ export const mkdir = (uri) => {
   throw new Error('not implemented')
 }
 
-export const getPathSeparator = () => {
-  return '/'
-}
-
 export const remove = (uri) => {
   throw new Error('not implemented')
 }
 
 export const readDirWithFileTypes = async (uri: string) => {
+  const path = getPath(uri)
   const fetchUri = `${AssetDir.assetDir}/config/fileMap.json`
   const fileList = await GetJson.getJson(fetchUri)
   const dirents: Dirent[] = []
   for (const fileUri of fileList) {
-    if (fileUri.startsWith(uri)) {
-      const rest = fileUri.slice(uri.length + 1)
+    if (fileUri.startsWith(path)) {
+      const rest = fileUri.slice(path.length + 1)
       if (rest.includes('/')) {
         const name = rest.slice(0, rest.indexOf('/'))
         if (dirents.some((dirent) => dirent.name === name)) {
